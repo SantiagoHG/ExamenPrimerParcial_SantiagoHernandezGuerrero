@@ -9,5 +9,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String usr= (findViewById(R.id.nombre)).toString();
+        String psw= (findViewById(R.id.password)).toString();
+
+        if (usr== "Santiago" && psw=="123456"){
+            
+        }
+
     }
+
 }
