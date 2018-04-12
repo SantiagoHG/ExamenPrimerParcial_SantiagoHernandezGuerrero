@@ -1,5 +1,6 @@
 package mx.ipn.cecyt9.examenprimerparcial_santiagohernandezguerrero;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         if (usr.equals("Santiago") && psw.equals("123456")){
             //Llama segunda vista
             Toast.makeText(this, "Usuario Válido", Toast.LENGTH_SHORT ).show();
-
+            Intent ventana =  new Intent (MainActivity.this, Main2Activity.class);
+            startActivity(ventana);
         }
         else{
             //Llama Error
