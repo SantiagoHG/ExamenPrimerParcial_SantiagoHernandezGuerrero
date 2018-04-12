@@ -2,21 +2,42 @@ package mx.ipn.cecyt9.examenprimerparcial_santiagohernandezguerrero;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+   EditText usuario, contresena;
+
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String usr= (findViewById(R.id.nombre)).toString();
-        String psw= (findViewById(R.id.password)).toString();
+        usuario = findViewById(R.id.nombre);
+        contresena = findViewById(R.id.password);
 
-        if (usr== "Santiago" && psw=="123456"){
-            
+
+
+
+
+    }
+
+    public void validar(View v){
+
+        String usr= usuario.getText().toString();
+        String psw= contresena.getText().toString();
+        if (usr.equals("Santiago") && psw.equals("123456")){
+            //Llama segunda vista
+            Toast.makeText(this, "Usuario Válido", Toast.LENGTH_SHORT ).show();
+
         }
-
+        else{
+            //Llama Error
+            Toast.makeText(this, "Usuario Inválido", Toast.LENGTH_SHORT ).show();
+        }
     }
 
 }
